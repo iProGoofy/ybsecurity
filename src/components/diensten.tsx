@@ -1,16 +1,16 @@
-"use client"
-import Image from 'next/image'
-import Link from 'next/link'
-import { useState } from 'react'
+"use client";
+import Image from 'next/image';
+import Link from 'next/link';
+import { JSX, useState } from 'react';
 
 interface Service {
-  id: string
-  title: string
-  shortDescription: string
-  detailedDescription: string
-  features: string[]
-  icon: JSX.Element
-  image: string
+  id: string;
+  title: string;
+  shortDescription: string;
+  detailedDescription: string;
+  features: string[];
+  icon: JSX.Element;
+  image: string;
 }
 
 const services: Service[] = [
@@ -128,7 +128,7 @@ const services: Service[] = [
     ),
     image: '/receptie-diensten.jpg'
   }
-]
+];
 
 export default function DienstenSection() {
   return (
@@ -140,7 +140,7 @@ export default function DienstenSection() {
             Onze <span className="text-black">Diensten</span>
           </h2>
           <p className="text-gray-700 text-lg leading-relaxed">
-            YBSecurity biedt een breed scala aan professionele beveiligingsdiensten. 
+            YBSecurity biedt een breed scala aan professionele beveiligingsdiensten.
             Van mobiele surveillance tot evenementbeveiliging, wij zorgen voor uw veiligheid.
           </p>
         </div>
@@ -168,15 +168,15 @@ export default function DienstenSection() {
               </p>
 
               {/* Link to Detail Page */}
-              <Link 
+              <Link
                 href={`/diensten/${service.id}`}
                 className="w-full px-6 py-3 rounded-xl border border-gray-200 hover:border-black text-gray-700 hover:text-black transition-all duration-300 flex items-center justify-center gap-2 group"
               >
                 <span>Meer informatie</span>
-                <svg 
+                <svg
                   className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
-                  fill="none" 
-                  stroke="currentColor" 
+                  fill="none"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -193,7 +193,7 @@ export default function DienstenSection() {
               Op zoek naar maatwerk?
             </h3>
             <p className="text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Elke situatie is uniek. Wij denken graag met u mee voor een beveiligingsoplossing 
+              Elke situatie is uniek. Wij denken graag met u mee voor een beveiligingsoplossing
               die perfect aansluit bij uw specifieke behoeften.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -208,8 +208,8 @@ export default function DienstenSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 // Export de services array zodat andere componenten er gebruik van kunnen maken
-export { services }
+export { services };
