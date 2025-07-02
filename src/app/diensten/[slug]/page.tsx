@@ -1,19 +1,21 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-
 // Import je services array (pas het pad aan naar waar jouw component staat)
 import { services } from '@/data/services'; // Pas dit pad aan!
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
-export default function DienstDetailPage({ params }: PageProps) {
+export default async function DienstDetailPage({ params }: PageProps) {
+  // Await the params since they're now a Promise in Next.js 15
+  const { slug } = await params;
+  
   // Zoek de service op basis van de slug
-  const service = services.find(s => s.id === params.slug);
+  const service = services.find(s => s.id === slug);
 
   // Als service niet gevonden wordt, toon 404
   if (!service) {
