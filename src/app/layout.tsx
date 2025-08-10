@@ -63,9 +63,12 @@ export default function RootLayout({
   return (
     <html lang="nl">
       <body className={`${archivoNarrow.variable} ${archivo.variable} ${bebasNeue.variable} antialiased`}>
-        <Header/>
+        <h1>UNDER MAINTANANCE</h1>
+        {/* Google Tag Manager 
+        <Header />
         <main>{children}</main>
         <Footer />
+        */}
         
         {/* Google Tag Manager */}
       </body>
