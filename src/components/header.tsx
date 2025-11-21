@@ -9,19 +9,31 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [hidden, setHidden] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const { scrollY } = useScroll()
+  const [lastScrollY, setLastScrollY] = useState(0)
   const pathname = usePathname()
   const router = useRouter()
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious()
-    if (previous !== undefined && latest > previous && latest > 150) {
-      setHidden(true)
-    } else if (previous !== undefined && latest <= previous) {
-      setHidden(false)
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      
+      // Als we naar beneden scrollen en voorbij 150px zijn
+      if (currentScrollY > lastScrollY && currentScrollY > 150) {
+        setHidden(true)
+      } 
+      // Als we naar boven scrollen
+      else if (currentScrollY < lastScrollY) {
+        setHidden(false)
+      }
+      
+      // Voor het blur effect
+      setScrolled(currentScrollY > 50)
+      setLastScrollY(currentScrollY)
     }
-    setScrolled(latest > 50)
-  })
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [lastScrollY])
 
   useEffect(() => {
     setIsOpen(false)
