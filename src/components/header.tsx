@@ -9,31 +9,19 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [hidden, setHidden] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [lastScrollY, setLastScrollY] = useState(0)
+  const { scrollY } = useScroll()
   const pathname = usePathname()
   const router = useRouter()
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY
-      
-      // Als we naar beneden scrollen en voorbij 150px zijn
-      if (currentScrollY > lastScrollY && currentScrollY > 150) {
-        setHidden(true)
-      } 
-      // Als we naar boven scrollen
-      else if (currentScrollY < lastScrollY) {
-        setHidden(false)
-      }
-      
-      // Voor het blur effect
-      setScrolled(currentScrollY > 50)
-      setLastScrollY(currentScrollY)
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious()
+    if (latest > previous && latest > 150) {
+      setHidden(true)
+    } else {
+      setHidden(false)
     }
-
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [lastScrollY])
+    setScrolled(latest > 50)
+  })
 
   useEffect(() => {
     setIsOpen(false)
@@ -145,7 +133,7 @@ const Navbar = () => {
             >
               <Link href="/" className="flex items-center">
                 <motion.div
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.05, rotate: 5 }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 >
