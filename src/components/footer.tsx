@@ -15,9 +15,9 @@ export default function Footer() {
               <Image 
                 src="/YB-WHITE.png" 
                 alt="YBSecurity Logo" 
-                width={60} 
-                height={60} 
-                className="h-25 w-25 object-cover rounded-full" 
+                width={100} 
+                height={100} 
+                className="h-40 w-40 object-cover rounded-full" 
               />
               
             </Link>

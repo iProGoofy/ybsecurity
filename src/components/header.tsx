@@ -7,19 +7,12 @@ import { usePathname, useRouter } from 'next/navigation'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const [hidden, setHidden] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const { scrollY } = useScroll()
   const pathname = usePathname()
   const router = useRouter()
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious()
-    if (latest > previous && latest > 150) {
-      setHidden(true)
-    } else {
-      setHidden(false)
-    }
     setScrolled(latest > 50)
   })
 
@@ -41,7 +34,7 @@ const Navbar = () => {
     { href: "/", label: "Home" },
     { href: "/over-ons", label: "Over ons" },
     { href: "/#diensten", label: "Diensten", onClick: handleDienstenClick },
-    { href: "/zzper", label: "ZZPer?" },
+    { href: "/zzper", label: "Zzper?" },
     { href: "/vacatures", label: "Vacatures" },
   ]
 
@@ -111,12 +104,8 @@ const Navbar = () => {
 
       {/* Main Navigation */}
       <motion.header
-        variants={{
-          visible: { y: 0 },
-          hidden: { y: "-100%" },
-        }}
-        animate={hidden ? "hidden" : "visible"}
-        transition={{ duration: 0.35, ease: "easeInOut" }}
+        initial={{ y: 0 }}
+        animate={{ y: 0 }}
         className={`sticky top-0 z-50 w-full border-b transition-all duration-300 ${
           scrolled 
             ? 'bg-white/80 backdrop-blur-xl border-gray-200 shadow-lg' 
