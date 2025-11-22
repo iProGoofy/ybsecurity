@@ -34,7 +34,7 @@ const Navbar = () => {
     { href: "/", label: "Home" },
     { href: "/over-ons", label: "Over ons" },
     { href: "/#diensten", label: "Diensten", onClick: handleDienstenClick },
-    { href: "/zzper", label: "Zzper?" },
+    { href: "/zzper", label: "Zzper" },
     { href: "/vacatures", label: "Vacatures" },
   ]
 

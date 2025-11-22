@@ -4,31 +4,31 @@
   /* Primaire kleuren */
   --color-primary: #B4C9CA;
   --color-primary-accent: #DDFE71;
-
+  
   /* Secundaire kleuren */
   --color-secondary: #B4C9CA;
   --color-secondary-accent: #B4C9CA;
-
+  
   /* Donkere modus (optioneel) */
   --color-primary-dark: #2a3b3c;
   --color-primary-accent-dark: #b8e854;
   --color-secondary-dark: #2a3b3c;
   --color-secondary-accent-dark: #2a3b3c;
-  
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: auto; /* Voeg dit toe */
 }
 
 body {
   font-family: var(--font-comic-neue), sans-serif;
   color: var(--color-primary-dark);
   overflow-x: hidden;
-  
+  min-height: 100vh; /* Voeg dit toe */
+  position: relative; /* Voeg dit toe */
 }
-
-html {
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
 
 h1, h2, h3 {
   font-family: var(--font-comic-neue), sans-serif;
@@ -45,5 +45,3 @@ h2 {
 p {
   font-family: var(--font-comic-neue), sans-serif;
 }
-
-
