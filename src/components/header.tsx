@@ -47,17 +47,13 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Top Bar */}
-      <motion.div 
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        className="w-full bg-black text-white"
-      >
+      {/* Top Bar - Fixed */}
+      <div className="fixed top-0 left-0 right-0 z-[60] w-full bg-black text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-14 items-center justify-between">
             <div className="flex items-center gap-4">
               <motion.a 
-                href="tel:+31612345678" 
+                href="tel:+31634268574" 
                 className="flex items-center gap-2 text-sm hover:text-gray-300 transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -66,7 +62,7 @@ const Navbar = () => {
                   <path d="M14.414 7l3.293-3.293a1 1 0 00-1.414-1.414L13 5.586V4a1 1 0 10-2 0v4.003a.996.996 0 00.617.921A.997.997 0 0012 9h4a1 1 0 100-2h-1.586z" />
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                 </svg>
-                <span className="hidden sm:inline">+31 6 12345678</span>
+                <span className="hidden sm:inline">+31 6 34268574</span>
               </motion.a>
               <motion.a 
                 href="mailto:info@ybsecurity.nl" 
@@ -88,9 +84,6 @@ const Navbar = () => {
                   className="p-2 hover:text-gray-300 transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
                 >
                   <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
                     <path d={social.icon} />
@@ -100,58 +93,40 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
 
-      {/* Main Navigation */}
-      <motion.header
-        initial={{ y: 0 }}
-        animate={{ y: 0 }}
-        className={`sticky top-0 z-50 w-full border-b transition-all duration-300 ${
+      {/* Main Navigation - Fixed below top bar */}
+      <header
+        className={`fixed top-14 left-0 right-0 z-50 w-full border-b transition-all duration-300 ${
           scrolled 
-            ? 'bg-white/80 backdrop-blur-xl border-gray-200 shadow-lg' 
+            ? 'bg-white/95 backdrop-blur-xl border-gray-200 shadow-lg' 
             : 'bg-white border-gray-100'
         }`}
       >
         <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-20 items-center justify-between">
             {/* Logo */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <Link href="/" className="flex items-center">
-                <motion.div
-                  whileHover={{ scale: 1.05, rotate: 5 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                >
-                  <Image
-                    src="/YB TRAN.png"
-                    alt="YB Security Logo"
-                    width={60}
-                    height={60}
-                    className="h-14 w-auto"
-                    priority
-                  />
-                </motion.div>
-              </Link>
-            </motion.div>
+            <Link href="/" className="flex items-center">
+              <motion.div
+                whileHover={{ scale: 1.05, rotate: 5 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              >
+                <Image
+                  src="/YB TRAN.png"
+                  alt="YB Security Logo"
+                  width={60}
+                  height={60}
+                  className="h-14 w-auto"
+                  priority
+                />
+              </motion.div>
+            </Link>
 
             {/* Desktop Navigation */}
-            <motion.ul 
-              className="hidden lg:flex items-center gap-8"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
+            <ul className="hidden lg:flex items-center gap-8">
               {navLinks.map((link, index) => (
-                <motion.li
-                  key={link.href}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
+                <li key={link.href}>
                   <Link
                     href={link.href}
                     onClick={link.onClick}
@@ -165,17 +140,12 @@ const Navbar = () => {
                       transition={{ duration: 0.3 }}
                     />
                   </Link>
-                </motion.li>
+                </li>
               ))}
-            </motion.ul>
+            </ul>
 
             {/* Contact Button */}
-            <motion.div
-              className="hidden lg:block"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
+            <div className="hidden lg:block">
               <Link href="/contact">
                 <motion.button
                   className="px-6 py-3 bg-black text-white rounded-full font-medium hover:bg-gray-800 transition-colors"
@@ -185,13 +155,12 @@ const Navbar = () => {
                   Contact
                 </motion.button>
               </Link>
-            </motion.div>
+            </div>
 
             {/* Mobile Menu Button */}
-            <motion.button
+            <button
               className="lg:hidden relative w-10 h-10 flex flex-col items-center justify-center"
               onClick={() => setIsOpen(!isOpen)}
-              whileTap={{ scale: 0.9 }}
               aria-label="Toggle menu"
             >
               <motion.span
@@ -206,7 +175,7 @@ const Navbar = () => {
                 animate={isOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
                 className="w-6 h-0.5 bg-black transition-all"
               />
-            </motion.button>
+            </button>
           </div>
 
           {/* Mobile Menu */}
@@ -216,7 +185,7 @@ const Navbar = () => {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="lg:hidden overflow-hidden"
           >
-            <motion.ul className="py-6 space-y-4">
+            <ul className="py-6 space-y-4">
               {navLinks.map((link, index) => (
                 <motion.li
                   key={link.href}
@@ -247,10 +216,13 @@ const Navbar = () => {
                   </motion.button>
                 </Link>
               </motion.li>
-            </motion.ul>
+            </ul>
           </motion.div>
         </nav>
-      </motion.header>
+      </header>
+
+      {/* Spacer to prevent content from going under fixed header */}
+      <div className="h-[136px]" />
 
       {/* Mobile Overlay */}
       {isOpen && (

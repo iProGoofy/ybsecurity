@@ -20,8 +20,8 @@ const contactOptions = [
     ),
     title: "Telefoon",
     description: "Bel ons voor directe vragen",
-    value: "010 - 123 4567",
-    link: "tel:0101234567"
+    value: "+31 6 34268574",
+    link: "tel:+31634268574"
   },
   {
     icon: (
@@ -43,7 +43,7 @@ const contactOptions = [
     ),
     title: "Adres",
     description: "Bezoek ons kantoor",
-    value: "Beveiligingsstraat 123, 3000 AB Rotterdam",
+    value: "Byronstraat 47, 5924XL Venlo",
     link: null
   },
   {
@@ -242,7 +242,7 @@ export default function ContactPage() {
                       required
                       disabled={isSubmitting}
                       className="w-full px-4 py-3 border border-gray-300 rounded-xl text-base focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all disabled:opacity-50"
-                      placeholder="+31 6 12345678"
+                      placeholder="+31 6 34268574"
                     />
                   </div>
                 </div>

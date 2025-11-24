@@ -94,11 +94,6 @@ const workTypes = [
     description: "Controleren van verschillende objecten en locaties in de omgeving",
     icon: "🚗"
   },
-  {
-    title: "Personsbeveiliging",
-    description: "Bescherming van VIP's en begeleiding bij speciale gelegenheden",
-    icon: "👤"
-  }
 ];
 
 export default function ZZPerPage() {
@@ -187,9 +182,11 @@ export default function ZZPerPage() {
               >
                 Meld je aan
               </button>
+              <a href="/contact">
               <button className="px-8 py-4 border-2 border-white text-white rounded-xl font-semibold hover:bg-white hover:text-black transition-all duration-300">
                 Meer informatie
               </button>
+              </a>
             </div>
           </div>
         </div>
