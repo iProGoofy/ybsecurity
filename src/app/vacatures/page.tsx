@@ -305,7 +305,7 @@ export default function VacaturesPage() {
       </section>
 
       {selectedVacature && (
-        <div className="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center p-0 sm:p-4">
+        <div className="fixed inset-0 bg-black bg-opacity-60 z-70 flex items-center justify-center p-0 sm:p-4">
           <div 
             className="absolute inset-0" 
             onClick={() => setSelectedVacature(null)}

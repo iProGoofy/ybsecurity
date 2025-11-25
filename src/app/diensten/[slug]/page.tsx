@@ -118,7 +118,7 @@ export default async function DienstDetailPage({ params }: PageProps) {
               Wij denken graag met u mee over de beste beveiligingsoplossing.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a href="/contact">
+              <a href="/contact" >
               <button className="px-8 py-4 bg-white text-black rounded-2xl font-semibold hover:bg-gray-100 transition-colors duration-300 w-full sm:w-auto">
                 Vraag offerte aan
               </button>
