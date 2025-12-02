@@ -30,7 +30,7 @@ export default function HeroSection() {
         {/* Images */}
         <div className="relative w-full h-[400px] sm:h-[500px] lg:h-[35rem] mx-auto max-w-lg lg:max-w-none">
           {/* Front Image */}
-          <div className="absolute left-0 top-0 w-[60%] h-[70%] sm:h-[75%] lg:h-[80%] rounded-3xl overflow-hidden border-4 sm:border-8 border-gray-200 z-20 shadow-xl">
+          <div className="absolute left-0 top-0 w-[60%] h-[70%] sm:h-[75%] lg:h-[80%] rounded-3xl overflow-hidden border-4 sm:border-8 border-black z-20 shadow-xl">
             <Image 
               src="/evenement-voor.png" 
               alt="YBSecurity evenement beveiliging" 
@@ -41,7 +41,7 @@ export default function HeroSection() {
           </div>
           
           {/* Back Image */}
-          <div className="absolute right-0 bottom-0 w-[65%] sm:w-[70%] lg:w-[75%] h-[65%] sm:h-[70%] lg:h-[75%] rounded-3xl overflow-hidden border-4 border-gray-200 z-10 shadow-lg">
+          <div className="absolute right-0 bottom-0 w-[65%] sm:w-[70%] lg:w-[75%] h-[65%] sm:h-[70%] lg:h-[75%] rounded-3xl overflow-hidden border-4 border-black z-10 shadow-lg">
             <Image 
               src="/evenement-lachen.png" 
               alt="YBSecurity team" 

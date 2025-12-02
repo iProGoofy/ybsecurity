@@ -70,16 +70,7 @@ const departments = [
     description: "Voor bestaande klanten",
     email: "info@ybsecurity.nl"
   },
-  {
-    title: "Werving & Selectie",
-    description: "Voor vacatures en sollicitaties",
-    email: "info@ybsecurity.nl"
-  },
-  {
-    title: "Spoedmeldingen",
-    description: "24/7 bereikbaar voor noodgevallen",
-    email: "info@ybsecurity.nl"
-  }
+
 ];
 
 export default function ContactPage() {

@@ -162,32 +162,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Newsletter Section */}
-      <div className="border-t border-gray-800">
-        <div className="mx-auto lg:max-w-7xl w-full px-5 sm:px-10 md:px-12 lg:px-5 py-8">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-            <div className="text-center lg:text-left">
-              <h3 className="text-lg font-semibold text-white mb-2">
-                Blijf op de hoogte van beveiligingstrends
-              </h3>
-              <p className="text-gray-400 text-sm">
-                Ontvang tips, nieuws en updates over beveiliging direct in uw inbox.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto lg:min-w-96">
-              <input
-                type="email"
-                placeholder="Uw e-mailadres"
-                className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 focus:ring-1 focus:ring-gray-500"
-              />
-              <button className="px-6 py-3 bg-gray-700 text-white rounded-lg font-semibold hover:bg-gray-600 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 whitespace-nowrap">
-                Aanmelden
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      
       {/* Bottom Bar */}
       <div className="border-t border-gray-800">
         <div className="mx-auto lg:max-w-7xl w-full px-5 sm:px-10 md:px-12 lg:px-5 py-6">
