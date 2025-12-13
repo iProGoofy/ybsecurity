@@ -9,7 +9,7 @@ export default function HeroSection() {
         
         {/* Text Content */}
         <div className="flex flex-col space-y-6 sm:space-y-8 text-center lg:text-left max-w-2xl md:max-w-3xl mx-auto lg:mx-0">
-          <h1 className="font-semibold leading-tight text-teal-950 text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+          <h1 className="font-semibold leading-tight text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
             Uw veiligheid is bij YBSecurity in goede handen.
           </h1>
           
@@ -41,7 +41,7 @@ export default function HeroSection() {
           </div>
           
           {/* Back Image */}
-          <div className="absolute right-0 bottom-0 w-[65%] sm:w-[70%] lg:w-[75%] h-[65%] sm:h-[70%] lg:h-[75%] rounded-3xl overflow-hidden border-4 border-black z-10 shadow-lg">
+          <div className="absolute right-0 bottom-0 w-[65%] sm:w-[70%] lg:w-[75%] h-[65%] sm:h-[70%] lg:h-[75%] rounded-3xl overflow-hidden sm:border-8 border-black z-10 shadow-lg">
             <Image 
               src="/evenement-lachen.png" 
               alt="YBSecurity team" 

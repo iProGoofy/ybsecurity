@@ -1,5 +1,5 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 const teamMembers = [
@@ -80,14 +80,74 @@ const values = [
 ];
 
 const milestones = [
-  { year: "2023", title: "Oprichting YBSecurity", description: "Het begin van onze missie om Rotterdam veiliger te maken" },
+  { year: "2026", title: "Oprichting YBSecurity", description: "Het begin van onze missie om Rotterdam veiliger te maken" },
 ];
+
+// Footstep component
+const Footstep = ({ delay, isLeft }: { delay: number; isLeft: boolean }) => {
+  return (
+    <div 
+      className="absolute z-30"
+      style={{
+        animation: `walkDown 4s linear ${delay}s infinite`,
+        left: isLeft ? 'calc(50% - 60px)' : 'calc(50% + 30px)',
+        top: '-60px'
+      }}
+    >
+      <div className="relative">
+        <svg 
+          width="50" 
+          height="60" 
+          viewBox="0 0 50 60" 
+          fill="none"
+          className={`drop-shadow-lg ${isLeft ? '' : 'scale-x-[-1]'}`}
+        >
+          {/* Main footprint shape */}
+          <ellipse cx="25" cy="45" rx="12" ry="8" fill="#000000"/>
+          <ellipse cx="25" cy="30" rx="10" ry="15" fill="#000000"/>
+
+
+        </svg>
+      </div>
+    </div>
+  );
+};
 
 export default function OverOnsPage() {
   const [expandedMember, setExpandedMember] = useState<number | null>(null);
+  const [footsteps, setFootsteps] = useState<Array<{ id: number; isLeft: boolean; delay: number }>>([]);
+
+  useEffect(() => {
+    // Generate footsteps alternating left and right
+    const steps = Array.from({ length: 4 }, (_, i) => ({
+      id: i,
+      isLeft: i % 2 === 0,
+      delay: i * 1.2
+    }));
+    setFootsteps(steps);
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <style jsx global>{`
+        @keyframes walkDown {
+          0% {
+            top: -60px;
+            opacity: 0;
+          }
+          5% {
+            opacity: 0.9;
+          }
+          95% {
+            opacity: 0.9;
+          }
+          100% {
+            top: calc(100% + 60px);
+            opacity: 0;
+          }
+        }
+      `}</style>
+
       {/* Hero Section */}
       <section className="relative bg-black text-white py-16 sm:py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800 opacity-90"></div>
@@ -97,7 +157,7 @@ export default function OverOnsPage() {
               Over <span className="text-white">YBSecurity</span>
             </h1>
             <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 leading-relaxed mb-8 sm:mb-12">
-              Al meer dan 10 jaar uw betrouwbare partner in beveiliging.
+              Al meer dan 5 jaar uw betrouwbare partner in beveiliging.
               Wij zorgen voor veiligheid met passie en professionaliteit.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -109,8 +169,6 @@ export default function OverOnsPage() {
         </div>
       </section>
 
-     
-
       {/* Verhaal Section */}
       <section className="py-12 sm:py-16 lg:py-24 bg-gray-50">
         <div className="mx-auto lg:max-w-7xl w-full px-5 sm:px-10 md:px-12 lg:px-5">
@@ -121,7 +179,7 @@ export default function OverOnsPage() {
               </h2>
               <div className="space-y-4 sm:space-y-6 text-gray-700 text-base sm:text-lg leading-relaxed">
                 <p>
-                  YBSecurity werd opgericht in 2023 met een duidelijke missie: het leveren van 
+                  YBSecurity werd opgericht in 2026 met een duidelijke missie: het leveren van 
                   betrouwbare en professionele beveiligingsdiensten aan bedrijven en particulieren 
                   in Rotterdam en omstreken.
                 </p>
@@ -146,8 +204,8 @@ export default function OverOnsPage() {
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-white rounded-2xl shadow-xl p-6 hidden sm:block">
-                <div className="text-4xl font-bold text-black mb-2">5+</div>
-                <div className="text-gray-600">Jaar ervaring in beveiliging</div>
+                <div className="text-4xl font-bold text-black mb-2">Nieuw!</div>
+                <div className="text-gray-600">Opgericht in 2026</div>
               </div>
             </div>
           </div>
@@ -184,7 +242,7 @@ export default function OverOnsPage() {
         </div>
       </section>
 
-      {/* Timeline Section */}
+      {/* Timeline Section with Animated Footsteps */}
       <section className="py-12 sm:py-16 lg:py-24 bg-gray-50">
         <div className="mx-auto lg:max-w-7xl w-full px-5 sm:px-10 md:px-12 lg:px-5">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
@@ -192,42 +250,77 @@ export default function OverOnsPage() {
               Onze Reis
             </h2>
             <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
-              Van een klein startup tot een toonaangevende beveiligingspartner in de regio.
+              Van een beginnend bedrijf naar een groeiende beveiligingspartner in de regio.
             </p>
           </div>
 
-          <div className="relative">
-            <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-300"></div>
+          {/* Mobile Timeline */}
+          <div className="lg:hidden space-y-6">
+            {milestones.map((milestone, index) => (
+              <div key={index} className="relative pl-8">
+                {/* Vertical line for mobile */}
+                <div className="absolute left-3 top-0 bottom-0 w-0.5 bg-gray-300"></div>
+                
+                {/* Dot indicator */}
+                <div className="absolute left-0 top-0 w-6 h-6 bg-black text-white rounded-full flex items-center justify-center text-xs font-bold">
+                  {index + 1}
+                </div>
+                
+                <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-lg">
+                  <div className="text-2xl font-bold text-black mb-2">
+                    {milestone.year}
+                  </div>
+                  <h3 className="text-lg font-semibold text-black mb-2">
+                    {milestone.title}
+                  </h3>
+                  <p className="text-gray-700 text-sm leading-relaxed">
+                    {milestone.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop Timeline */}
+          <div className="hidden lg:block relative" style={{ minHeight: '400px' }}>
+            {/* Center line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-300 z-0"></div>
             
-            <div className="space-y-8 sm:space-y-12">
+            {/* Animated footsteps container */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none z-20">
+              {footsteps.map((step) => (
+                <Footstep key={step.id} delay={step.delay} isLeft={step.isLeft} />
+              ))}
+            </div>
+            
+            <div className="space-y-12 relative z-10">
               {milestones.map((milestone, index) => (
-                <div key={index} className={`flex flex-col lg:flex-row items-center gap-6 sm:gap-8 ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
-                  <div className={`flex-1 ${index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'}`}>
-                    <div className="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                      <div className="text-3xl sm:text-4xl font-bold text-black mb-3">
+                <div key={index} className={`flex items-center gap-8 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
+                  <div className={`flex-1 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
+                    <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                      <div className="text-4xl font-bold text-black mb-3">
                         {milestone.year}
                       </div>
-                      <h3 className="text-xl sm:text-2xl font-semibold text-black mb-3">
+                      <h3 className="text-2xl font-semibold text-black mb-3">
                         {milestone.title}
                       </h3>
-                      <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                      <p className="text-gray-700 text-base leading-relaxed">
                         {milestone.description}
                       </p>
                     </div>
                   </div>
                   
-                  <div className="hidden lg:flex w-12 h-12 bg-black text-white rounded-full items-center justify-center font-bold text-lg z-10 flex-shrink-0">
+                  <div className="flex w-12 h-12 bg-black text-white rounded-full items-center justify-center font-bold text-lg z-10 flex-shrink-0 relative">
                     {index + 1}
                   </div>
                   
-                  <div className="flex-1 hidden lg:block"></div>
+                  <div className="flex-1"></div>
                 </div>
               ))}
             </div>
           </div>
         </div>
       </section>
-
 
       {/* CTA Section */}
       <section className="py-12 sm:py-16 lg:py-24 bg-gray-50 text-black">

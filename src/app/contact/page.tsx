@@ -421,32 +421,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Google Maps */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-white">
-        <div className="mx-auto lg:max-w-7xl w-full px-5 sm:px-10 md:px-12 lg:px-5">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-6">
-              Bezoek ons kantoor
-            </h2>
-            <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
-              Je bent altijd welkom op ons kantoor. Maak wel even een afspraak, zodat we de tijd voor je kunnen vrijmaken.
-            </p>
-          </div>
-
-          <div className="rounded-3xl overflow-hidden h-96 sm:h-[500px] border border-gray-300 shadow-lg">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2490.8261203727957!2d6.131471476713103!3d51.36949317178228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c74545cc04aa2f%3A0x74a080b318412f3e!2sByronstraat%2047%2C%205924%20XL%20Venlo!5e0!3m2!1snl!2snl!4v1763231726927!5m2!1snl!2snl"
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="YBSecurity Kantoor Locatie"
-            />
-          </div>
-        </div>
-      </section>
+      
       <section className="py-12 sm:py-16 lg:py-24 bg-white">
         <div className="mx-auto lg:max-w-7xl w-full px-5 sm:px-10 md:px-12 lg:px-5">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
