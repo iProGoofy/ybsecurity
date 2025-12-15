@@ -26,7 +26,7 @@ const vacatures: Vacature[] = [
     title: "Beveiliger Evenementen",
     location: "Venlo & Omstreken",
     type: "Fulltime",
-    experience: "0-2 jaar",
+    experience: "",
     description: "Zoek jij een dynamische baan in de beveiliging? Als evenementenbeveiliger zorg je voor de veiligheid tijdens diverse evenementen.",
     requirements: [
       "Beveiligingsdiploma (of bereid deze te halen)",
@@ -40,7 +40,7 @@ const vacatures: Vacature[] = [
     title: "Objectbeveiliger",
     location: "Venlo & Omstreken",
     type: "Fulltime",
-    experience: "2-5 jaar",
+    experience: "",
     description: "Voor diverse objecten zoeken wij ervaren objectbeveiligers. Je bent verantwoordelijk voor toegangscontrole en het bewaken van panden.",
     requirements: [
       "Minimaal 2 jaar ervaring in de beveiliging",
@@ -253,7 +253,6 @@ export default function VacaturesPage() {
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="px-3 py-1 bg-black text-white text-xs sm:text-sm rounded-lg">{vacature.type}</span>
                   <span className="px-3 py-1 bg-gray-200 text-gray-700 text-xs sm:text-sm rounded-lg">{vacature.location}</span>
-                  <span className="px-3 py-1 bg-gray-200 text-gray-700 text-xs sm:text-sm rounded-lg">{vacature.experience}</span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-semibold text-black mb-3 sm:mb-4">{vacature.title}</h3>
                 <p className="text-gray-700 text-sm sm:text-base mb-5 sm:mb-6 leading-relaxed">{vacature.description}</p>
