@@ -6,7 +6,6 @@ type Vacature = {
   title: string;
   location: string;
   type: string;
-  experience: string;
   description: string;
   requirements: string[];
 };
@@ -26,7 +25,6 @@ const vacatures: Vacature[] = [
     title: "Beveiliger Evenementen",
     location: "Venlo & Omstreken",
     type: "Fulltime",
-    experience: "0-2 jaar",
     description: "Zoek jij een dynamische baan in de beveiliging? Als evenementenbeveiliger zorg je voor de veiligheid tijdens diverse evenementen.",
     requirements: [
       "Beveiligingsdiploma (of bereid deze te halen)",
@@ -40,7 +38,6 @@ const vacatures: Vacature[] = [
     title: "Objectbeveiliger",
     location: "Venlo & Omstreken",
     type: "Fulltime",
-    experience: "2-5 jaar",
     description: "Voor diverse objecten zoeken wij ervaren objectbeveiligers. Je bent verantwoordelijk voor toegangscontrole en het bewaken van panden.",
     requirements: [
       "Minimaal 2 jaar ervaring in de beveiliging",
