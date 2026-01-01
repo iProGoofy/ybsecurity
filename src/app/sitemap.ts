@@ -12,6 +12,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/privacybeleid",
     "/vacatures",
     "/zzper",
+    "/diensten/mobiele-surveillance",
+    "/diensten/alarmopvolging",
+    "/diensten/winkelbewaking",
+    "/diensten/evenementbeveiliging",
+    "/diensten/objectbewaking",
+    "/diensten/receptie-diensten",
 
   ];
 
