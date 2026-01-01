@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ybsecurity.nl/sitemap.xml
