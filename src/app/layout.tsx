@@ -43,11 +43,15 @@ const archivo = Archivo({
   variable: "--font-archivo",
 });
 
+
+
 export const metadata: Metadata = {
   title: "YBSecurity - Uw veiligheid in onze handen",
   description: "YBSecurity biedt professionele beveiligingsdiensten voor bedrijven en evenementen. Onze ervaren beveiligers zorgen voor een veilige omgeving, zodat u zich kunt concentreren op wat echt belangrijk is.",
   keywords: "beveiliging, beveiligingsdiensten, evenementenbeveiliging, bedrijfsbeveiliging, professionele beveiliging, veiligheid, beveiligingsbedrijf, YBSecurity",
   viewport: "width=device-width, initial-scale=1, viewport-fit=cover",
+  metadataBase: new URL("https://ybsecurity.nl"),
+  alternates: { canonical: "/" },
   icons: {
     icon: "/favicon.ico?v=2",
     
