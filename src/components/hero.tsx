@@ -20,7 +20,7 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
             <Link 
               href="/contact" 
-              className="px-8 py-3 h-12 rounded-3xl text-black border border-gray-200 bg-gray-100 hover:bg-gray-200 duration-300 ease-linear flex items-center justify-center w-full sm:w-auto font-medium"
+              className="px-8 py-3 h-12 rounded-3xl text-black border border-black bg-gray-100 hover:bg-gray-200 duration-300 ease-linear flex items-center justify-center w-full sm:w-auto font-medium"
             >
               Plan een gesprek
             </Link>
@@ -41,7 +41,7 @@ export default function HeroSection() {
           </div>
           
           {/* Back Image */}
-          <div className="absolute right-0 bottom-0 w-[65%] sm:w-[70%] lg:w-[75%] h-[65%] sm:h-[70%] lg:h-[75%] rounded-3xl overflow-hidden sm:border-8 border-black z-10 shadow-lg">
+          <div className="absolute right-[-10%] bottom-0 w-[65%] sm:w-[70%] lg:w-[75%] h-[65%] sm:h-[70%] lg:h-[75%] rounded-3xl overflow-hidden sm:border-8 border-black z-10 shadow-lg">
             <Image 
               src="/evenement-lachen.png" 
               alt="YBSecurity team" 

@@ -17,14 +17,10 @@ export default function Footer() {
                 alt="YBSecurity Logo" 
                 width={100} 
                 height={100} 
-                className="h-40 w-40 object-cover rounded-full" 
+                className="h-24 w-44 object-cover rounded-full" 
               />
               
             </Link>
-            <p className="text-gray-400 leading-relaxed mb-6">
-              Uw vertrouwde partner voor professionele beveiligingsdiensten in Nederland. 
-              Wij zorgen voor uw veiligheid met 24/7 beschikbaarheid en jarenlange ervaring.
-            </p>
             
             {/* Certifications */}
             <div className="mb-6">
