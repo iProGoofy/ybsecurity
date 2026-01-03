@@ -80,7 +80,7 @@ const values = [
 ];
 
 const milestones = [
-  { year: "2026", title: "Oprichting YBSecurity", description: "Het begin van onze missie om Rotterdam veiliger te maken" },
+  { year: "2026", title: "Oprichting YBSecurity", description: "Het begin van onze missie om Venlo & Omstreken veiliger te maken" },
 ];
 
 // Footstep component
@@ -181,7 +181,7 @@ export default function OverOnsPage() {
                 <p>
                   YBSecurity werd opgericht in 2026 met een duidelijke missie: het leveren van 
                   betrouwbare en professionele beveiligingsdiensten aan bedrijven en particulieren 
-                  in Rotterdam en omstreken.
+                  in Venlo en omstreken.
                 </p>
                 <p>
                   Wat begon als een klein team van beveiligingsexperts is uitgegroeid tot een van 
